@@ -24,6 +24,7 @@ def formingMagicSquare(s):
     visited = {}
     queue.append(sq)
     visited[str(sq[:-1])] = 0
+    
 
     while queue:
         curr = queue.pop(0)
@@ -103,21 +104,8 @@ def insertSorted(q, s):
 s = []
 s.append([4,8,2])
 s.append([4,5,7])
-s.append([6,1,6])
+s.append([2,1,6])
 
 result = formingMagicSquare(s)
 print("result=", result)
 
-# if __name__ == '__main__':
-#     fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
-#     s = []
-
-#     for _ in range(3):
-#         s.append(list(map(int, input().rstrip().split())))
-
-#     result = formingMagicSquare(s)
-
-#     fptr.write(str(result) + '\n')
-
-#     fptr.close()

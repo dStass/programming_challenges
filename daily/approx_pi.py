@@ -6,8 +6,8 @@ Hint: The basic equation of a circle is x2 + y2 = r2.
 import random
 import math
 
-TRIALS = 100
-SAMPLE = 10000
+TRIALS = 10
+SAMPLE = 1000000
 
 # randomly generate x and y from 0->1
 # if x^2 + y^2 < 1, add to a count

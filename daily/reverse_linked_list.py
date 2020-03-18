@@ -1,9 +1,11 @@
 '''
-From: Daily Interview Pro 22/08/19
 Problem: Reverse a Linked List
-
 Given a singly-linked list, reverse the list.
 This can be done iteratively or recursively. Can you get both solutions?
+
+Example: 
+Input: 4 -> 3 -> 2 -> 1 -> 0 -> NULL
+Output: 0 -> 1 -> 2 -> 3 -> 4 -> NULL
 '''
 
 class ListNode(object):
@@ -23,25 +25,23 @@ class ListNode(object):
 
   # Iterative Solution
   def reverseIteratively(self, head):
-    size = 1
     curr = head
-    while (curr != None):
-      next = curr.next
-      curr.next = None if size == 1 else prev
+    prev = None
+    while curr != None:
+      nextNode = curr.next
+      curr.next = prev
       prev = curr
-      curr = next
-      size += 1
+      curr = nextNode
+      
 
   # Recursive Solution
   def reverseRecursively(self, head):
-    if head == None:
-      return head
     if head.next == None:
       return head
     head.reverseRecursively(head.next)
     head.next.next = head
     head.next = None
-
+    
 
 # Test Program
 # Initialize the test list:
@@ -58,8 +58,11 @@ node3.next = testTail
 print("Initial list: ")
 testHead.printList()
 # 4 3 2 1 0
-# testHead.reverseIteratively(testHead)
-testHead.reverseRecursively(testHead)
-print("List after reversal: ")
+testHead.reverseIteratively(testHead)
+print("List after iterative reversal: ")
 testTail.printList()
 # 0 1 2 3 4
+testTail.reverseRecursively(testTail)
+print("List after recursive reversal: ")
+testHead.printList()
+# 4 3 2 1 0

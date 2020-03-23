@@ -15,7 +15,7 @@ class Solution:
     
 
     while i1 + i2 < required:
-      len(nums1) - i1 == 0 or len(nums2) - i2 == 0:
+      if len(nums1) - i1 == 0 or len(nums2) - i2 == 0:
         print('done')
         i1 += 1  # TODO
         i2 += 1
